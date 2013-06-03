@@ -79,5 +79,85 @@ namespace SuperEmo
             states.AddLast(nextState);
             return nextState;
         }
+
+        public void drawEnvironment()
+        {
+            int[] niza = new int[5];
+            niza = lastNStates(5);
+            for (int i = 0; i < 5; i++)
+            {
+                switch(niza[i]){
+                    case 0:
+                        Console.Write("|   ");
+                        break;
+                    case 1:
+                        Console.Write("|   ");
+                        break;
+                    case 2:
+                        Console.Write("| 0 ");
+                        break;
+                    case 3:
+                        Console.Write("|   ");
+                        break;
+                    case 4:
+                        Console.Write("| 0 ");
+                        break;
+                    case 5:
+                        Console.Write("| W ");
+                        break;
+                }
+            }
+            Console.Write("\n");
+            for (int i = 0; i < 5; i++)
+            {
+                switch (niza[i])
+                {
+                    case 0:
+                        Console.Write("|   ");
+                        break;
+                    case 1:
+                        Console.Write("| 0 ");
+                        break;
+                    case 2:
+                        Console.Write("|   ");
+                        break;
+                    case 3:
+                        Console.Write("|   ");
+                        break;
+                    case 4:
+                        Console.Write("|   ");
+                        break;
+                    case 5:
+                        Console.Write("| V ");
+                        break;
+                }
+            }
+            Console.Write("\n");
+            for (int i = 0; i < 5; i++)
+            {
+                switch (niza[i])
+                {
+                    case 0:
+                        Console.Write("|___");
+                        break;
+                    case 1:
+                        Console.Write("|___");
+                        break;
+                    case 2:
+                        Console.Write("|___");
+                        break;
+                    case 3:
+                        Console.Write("|  _");
+                        break;
+                    case 4:
+                        Console.Write("|  _");
+                        break;
+                    case 5:
+                        Console.Write("|___");
+                        break;
+                }
+            }
+            Console.Write("\n");
+        }
     }
 }
