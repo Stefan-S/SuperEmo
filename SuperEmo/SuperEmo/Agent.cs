@@ -130,12 +130,7 @@ namespace SuperEmo
 
         int getAction()
         {
-            int jump = this.genome[0,this.state,this.ground0,this.ground1,this.ground2];
-            int walk = this.genome[1, this.state, this.ground0, this.ground1, this.ground2];
-            int slide = this.genome[2, this.state, this.ground0, this.ground1, this.ground2];
-
-            int solution = max(jump, walk);
-            solution = max(solution, slide);
+            int solution = EmotionForState(state, ground0, ground1, ground2);
 
             //there the curiousity kicks in
             /* the number is between 0-1
@@ -172,12 +167,39 @@ namespace SuperEmo
             return randomNumberGenerator.Next(0, 2);
         }
 
-        public void takeAction(int action, int state, int ground0, int ground1, int ground2){
+        public void takeAction(int action, int state, int ground0, int ground1, int ground2)
+        {
+            int oldState = this.state;
+            int oldGround0 = this.ground0;
+            int oldGround1 = this.ground1;
+            int oldGround2 = this.ground2;
+            this.state = state;
+            this.ground0 = ground0;
+            this.ground1 = ground1;
+            this.ground2 = ground2;
+
+            int thisStateEmotion = EmotionForState(state, ground0, ground1, ground2);
+            if (genome[action,oldState,oldGround0,oldGround1,oldGround2] < thisStateEmotion)
+            {
+                genome[action, oldState, oldGround0, oldGround1, oldGround2]++;
+            }
         }
 
         public int getState()
         {
             return this.state;
         }
+
+        public int EmotionForState(int state, int ground0, int ground1, int ground2)
+        {
+            int jump = this.genome[0, state, ground0, ground1, ground2];
+            int walk = this.genome[1, state, ground0, ground1, ground2];
+            int slide = this.genome[2, state, ground0, ground1, ground2];
+
+            int solution = max(jump, walk);
+            solution = max(solution, slide);
+            return solution;
+        }
+
     }
 }
