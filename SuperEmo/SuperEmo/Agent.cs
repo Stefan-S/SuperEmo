@@ -37,7 +37,7 @@ namespace SuperEmo
          * 1 - stand
          * 2 - low
          */
-        int stsate;
+        int state=1;
 
         /* indication whether the Agent on ground 
          * 0 - Walkable
@@ -48,9 +48,10 @@ namespace SuperEmo
          * 5 - Obsticle
          * the number after the name indicates the type of the next three tiles 
          */
-        int ground0;
-        int ground1;
-        int ground2;
+        int ground0 = 0;
+        int ground1 = 0;
+        int ground2 = 0;
+
         //probailiy that the agent will try an action even though it knows there is a better action
         public double curiosity;
         
@@ -129,19 +130,19 @@ namespace SuperEmo
 
         int getAction()
         {
-            int jump = this.genome[0,this.stsate,this.ground0,this.ground1,this.ground2];
-            int walk = this.genome[1, this.stsate, this.ground0, this.ground1, this.ground2];
-            int slide = this.genome[2, this.stsate, this.ground0, this.ground1, this.ground2];
+            int jump = this.genome[0,this.state,this.ground0,this.ground1,this.ground2];
+            int walk = this.genome[1, this.state, this.ground0, this.ground1, this.ground2];
+            int slide = this.genome[2, this.state, this.ground0, this.ground1, this.ground2];
 
-            int solution = Math.Max(jump, walk);
-            solution = Math.Max(solution, slide);
+            int solution = max(jump, walk);
+            solution = max(solution, slide);
 
             //there the curiousity kicks in
             /* the number is between 0-1
              * it representas the probability that the agent will take
              * an action even though it (for now) thinks it is not the optimal
              */
-            if (randomNumberGenerator.Next(0, 100) < this.curiosity * 100)
+            if (randomNumberGenerator.Next(0, 101) < this.curiosity * 100)
             {
                 solution=(solution+coin()+1)%3;
             }
@@ -166,9 +167,17 @@ namespace SuperEmo
             }
         }
 
-        int coin()//returns 0 or 1
+        public int coin()//returns 0 or 1
         {
-            return randomNumberGenerator.Next(0, 1);
+            return randomNumberGenerator.Next(0, 2);
+        }
+
+        public void takeAction(int action, int state, int ground0, int ground1, int ground2){
+        }
+
+        public int getState()
+        {
+            return this.state;
         }
     }
 }
