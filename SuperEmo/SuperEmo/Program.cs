@@ -9,7 +9,7 @@ namespace SuperEmo
     {
         static void Main(string[] args)
         {
-            Console.Write("test");
+            Console.WriteLine("test\n sea klikni neso");
         }
     }
 }
