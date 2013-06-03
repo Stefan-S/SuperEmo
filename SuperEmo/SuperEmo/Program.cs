@@ -13,6 +13,8 @@ namespace SuperEmo
             Agent nevena = new Agent();
             nevena.save("C:\\Users\\stef\\Downloads\\nevena.txt");
             Console.WriteLine("test\n sea klikni neso");
+
+            //PROMENA
         }
     }
 }
