@@ -1,0 +1,5 @@
+C:\dokumenti\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.exe
+C:\dokumenti\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.pdb
+C:\dokumenti\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\dokumenti\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\SuperEmo.exe
+C:\dokumenti\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\SuperEmo.pdb
