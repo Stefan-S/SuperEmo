@@ -11,10 +11,12 @@ namespace SuperEmo
         {
             Enviroment env = new Enviroment();
             Agent nevena = new Agent();
-            nevena.save("C:\\Users\\stef\\Downloads\\nevena.txt");
+            nevena.save(Environment.CurrentDirectory+"\\nevena.txt");
             Console.WriteLine("test\n sea klikni neso");
 
             //PROMENA
+
+            
         }
     }
 }
