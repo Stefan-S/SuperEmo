@@ -76,7 +76,33 @@ namespace SuperEmo
 
         public void load(String file)
         {
+            String text = System.IO.File.ReadAllText(file);
+            String [] lines = text.Split('\n');
+            String [] textgenome = lines[0].Split(',');
 
+            int globalCount = 0;
+            for (int i1 = 0; i1 < 3; i1++)
+            {
+                for (int i2 = 0; i2 < 3; i2++)
+                {
+                    for (int i3 = 0; i3 < 5; i3++)
+                    {
+                        for (int i4 = 0; i4 < 5; i4++)
+                        {
+                            for (int i5 = 0; i5 < 5; i5++)
+                            {
+                                genome[i1, i2, i3, i4, i5] = int.Parse(textgenome[globalCount]);
+                            }
+                        }
+                    }
+                }
+            }
+
+            curiosity = int.Parse(lines[1]);
+            sensitivity = int.Parse(lines[2]);
+            gold = int.Parse(lines[3]);
+            units = int.Parse(lines[4]);
+            lives = int.Parse(lines[5]);
         }
     }
 }
