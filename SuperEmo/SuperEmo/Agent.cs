@@ -172,19 +172,32 @@ namespace SuperEmo
 
         public int getAction()
         {
-            int solution = ActionForState(state, ground0, ground1, ground2);
-
-            //there the curiousity kicks in
-            /* the number is between 0-1
-             * it representas the probability that the agent will take
-             * an action even though it (for now) thinks it is not the optimal
-             */
-            if (randomNumberGenerator.Next(0, 101) < this.curiosity * 100)
+            if (state == 1)
             {
-                solution=(solution+coin()+1)%3;
-            }
+                int[] actions = new int[3];
+                actions[0] = this.genome[0, state, ground0, ground1, ground2];
+                actions[1] = this.genome[1, state, ground0, ground1, ground2];
+                actions[2] = this.genome[2, state, ground0, ground1, ground2];
+                //if in state high cannot jump, and cannot slide
+                //if in slide, cannot jump and cannot slide
 
-            return solution;
+                int solution = findMax(actions);
+                //there the curiousity kicks in
+                /* the number is between 0-1
+                 * it representas the probability that the agent will take
+                 * an action even though it (for now) thinks it is not the optimal
+                 */
+                if (randomNumberGenerator.Next(0, 101) < this.curiosity * 100)
+                {
+                    solution = (solution + coin() + 1) % 3;
+                }
+
+                return solution;
+            }
+            else
+            {
+                return 1;
+            }
         }
 
 
@@ -233,6 +246,7 @@ namespace SuperEmo
             int oldGround0 = this.ground0;
             int oldGround1 = this.ground1;
             int oldGround2 = this.ground2;
+
             this.state = state;
             this.ground0 = ground0;
             this.ground1 = ground1;
@@ -271,6 +285,9 @@ namespace SuperEmo
             actions[0] = this.genome[0, state, ground0, ground1, ground2];
             actions[1] = this.genome[1, state, ground0, ground1, ground2];
             actions[2] = this.genome[2, state, ground0, ground1, ground2];
+            //if in state high cannot jump, and cannot slide
+            //if in slide, cannot jump and cannot slide
+
 
             return findMax(actions);
         }
