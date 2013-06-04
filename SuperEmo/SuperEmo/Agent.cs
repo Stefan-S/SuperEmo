@@ -67,8 +67,12 @@ namespace SuperEmo
         //lives lived
         public int lives;
 
+        
         Random randomNumberGenerator = new Random();
 
+        /* @args file: the file in which the genome and the
+         * personalisation parameters will be saved.
+         */
         public void save(String file)
         {
             String saved = "";
