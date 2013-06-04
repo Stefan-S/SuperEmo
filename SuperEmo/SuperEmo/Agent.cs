@@ -8,7 +8,44 @@ namespace SuperEmo
     //the agent
     class Agent
     {
- 
+
+        //tabula rasa constructor
+        //that wants coins
+        //and wants to live
+        public Agent()
+        {
+            
+            for (int i1 = 0; i1 < 3; i1++)
+            {
+                for (int i2 = 0; i2 < 3; i2++)
+                {
+                    for (int i3 = 0; i3 < 5; i3++)
+                    {
+                        for (int i4 = 0; i4 < 5; i4++)
+                        {
+                            for (int i5 = 0; i5 < 5; i5++)
+                            {
+                                //doesnt want to be stand or low above danger
+                                if((i2==1 && i3==3) || (i2==2 && i3==3))
+                                    genome[i1, i2, i3, i4, i5]=int.MinValue;
+
+                                //doesnt want to stand or high below obsticle
+                                if ((i2 == 1 && i3 == 5) || (i2 == 0 && i3 == 5))
+                                    genome[i1, i2, i3, i4, i5] = int.MinValue;
+
+                                //wants to be high on Walkable gold high and danger gold
+                                if ((i2 == 0 && i3 == 2) || (i2 == 0 && i3 == 4))
+                                    genome[i1, i2, i3, i4, i5] = int.MaxValue;
+
+                                //wants to stand or low on walkable gold low
+                                if ((i2 == 1 && i3 == 1) || (i2 == 2 && i3 == 1))
+                                    genome[i1, i2, i3, i4, i5] = int.MaxValue;
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
         /*
          * genome: 0
@@ -68,7 +105,7 @@ namespace SuperEmo
         public int lives;
 
         
-        Random randomNumberGenerator = new Random();
+        Random randomNumberGenerator = new Random(DateTime.Now.Millisecond);
 
         /* @args file: the file in which the genome and the
          * personalisation parameters will be saved.
@@ -92,11 +129,12 @@ namespace SuperEmo
                     }
                 }
             }
+
             saved = saved.Substring(0, saved.Length-1);
             saved += "\n" + curiosity;
             saved += "\n" + sensitivity;
             saved += "\n" + gold + "\n" + tilesPassed + "\n" + lives;
-            System.IO.File.WriteAllText(file, saved);
+            System.IO.File.WriteAllText(Environment.CurrentDirectory+"\\"+file, saved);
 
         }
 
@@ -132,7 +170,7 @@ namespace SuperEmo
         }
 
 
-        int getAction()
+        public int getAction()
         {
             int solution = ActionForState(state, ground0, ground1, ground2);
 
@@ -184,7 +222,7 @@ namespace SuperEmo
 
 
 
-        public int coin()//returns 0 or 1
+        int coin()//returns 0 or 1
         {
             return randomNumberGenerator.Next(0, 2);
         }
@@ -203,7 +241,10 @@ namespace SuperEmo
             int thisStateEmotion = EmotionForState(state, ground0, ground1, ground2);
             if (genome[action,oldState,oldGround0,oldGround1,oldGround2] < thisStateEmotion)
             {
-                genome[action, oldState, oldGround0, oldGround1, oldGround2]++;
+                if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 100)
+                {
+                    genome[action, oldState, oldGround0, oldGround1, oldGround2]++;
+                }
             }
         }
 
