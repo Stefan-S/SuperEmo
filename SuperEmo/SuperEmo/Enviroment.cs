@@ -88,22 +88,22 @@ namespace SuperEmo
             {
                 switch(niza[i]){
                     case 0:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 1:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 2:
-                        Console.Write("| 0 ");
+                        Console.Write(" 0 ");
                         break;
                     case 3:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 4:
-                        Console.Write("| 0 ");
+                        Console.Write(" 0 ");
                         break;
                     case 5:
-                        Console.Write("| W ");
+                        Console.Write(" W ");
                         break;
                 }
             }
@@ -113,22 +113,22 @@ namespace SuperEmo
                 switch (niza[i])
                 {
                     case 0:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 1:
-                        Console.Write("| 0 ");
+                        Console.Write(" 0 ");
                         break;
                     case 2:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 3:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 4:
-                        Console.Write("|   ");
+                        Console.Write("   ");
                         break;
                     case 5:
-                        Console.Write("| V ");
+                        Console.Write(" V ");
                         break;
                 }
             }
@@ -138,26 +138,26 @@ namespace SuperEmo
                 switch (niza[i])
                 {
                     case 0:
-                        Console.Write("|___");
+                        Console.Write("___");
                         break;
                     case 1:
-                        Console.Write("|___");
+                        Console.Write("___");
                         break;
                     case 2:
-                        Console.Write("|___");
+                        Console.Write("___");
                         break;
                     case 3:
-                        Console.Write("|  _");
+                        Console.Write("  _");
                         break;
                     case 4:
-                        Console.Write("|  _");
+                        Console.Write("  _");
                         break;
                     case 5:
-                        Console.Write("|___");
+                        Console.Write("___");
                         break;
                 }
             }
-            Console.Write("\n");
+            Console.Write("|\n");
         }
     }
 }
