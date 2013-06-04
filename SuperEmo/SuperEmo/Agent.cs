@@ -130,7 +130,7 @@ namespace SuperEmo
 
         int getAction()
         {
-            int solution = EmotionForState(state, ground0, ground1, ground2);
+            int solution = ActionForState(state, ground0, ground1, ground2);
 
             //there the curiousity kicks in
             /* the number is between 0-1
