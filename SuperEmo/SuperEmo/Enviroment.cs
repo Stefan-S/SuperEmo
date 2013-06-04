@@ -26,7 +26,7 @@ namespace SuperEmo
             states.AddLast(0);
             states.AddLast(0);
             states.AddLast(0);
-            generateState();
+            states.AddLast(0);
             generateState();
 
         }
@@ -68,12 +68,12 @@ namespace SuperEmo
                 case 0:
                 case 1:
                 case 2:
-                    nextState = randomNumberGenerator.Next(0, 5);
+                    nextState = randomNumberGenerator.Next(0, 6);
                     break;
                 case 3:
                 case 4:
                 case 5:
-                    nextState = randomNumberGenerator.Next(0, 2);
+                    nextState = randomNumberGenerator.Next(0, 3);
                     break;
             }
             states.AddLast(nextState);
