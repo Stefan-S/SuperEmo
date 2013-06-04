@@ -11,15 +11,21 @@ namespace SuperEmo
         {
             Enviroment env = new Enviroment();
             Agent nevena = new Agent();
-            nevena.save(Environment.CurrentDirectory+"\\nevena.txt");
+            nevena.sensitivity = 1;
+            nevena.save("nevena.txt");
 
             //PROMENA
-            for (int i = 0; i < 30; i++)
+            for (int i = 0; i < 300; i++)
             {
                 Console.Clear();
                 env.drawEnvironment();
+                Console.WriteLine(nevena.getState());
+
+                int[] tiles = env.lastNStates(4); //zadnji 4
+                int a = nevena.getAction(); //zemi akcija od agent
+                nevena.takeAction(a,a,tiles[0],tiles[1],tiles[2]); //na agent take action so akcijata od prethodniot cekor
                 env.generateState();
-                System.Threading.Thread.Sleep(1000);
+                System.Threading.Thread.Sleep(100);
             }
 
             Console.Write("\n");

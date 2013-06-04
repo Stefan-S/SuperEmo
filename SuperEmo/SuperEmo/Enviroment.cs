@@ -7,9 +7,6 @@ namespace SuperEmo
 {
     class Enviroment
     {
-
-
-
         /*
          * states:
          * 0 - Walkable
