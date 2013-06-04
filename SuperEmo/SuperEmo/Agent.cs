@@ -27,25 +27,25 @@ namespace SuperEmo
                             {
                                 //doesnt want to be stand or low above danger
                                 if((i2==1 && i3==3) || (i2==2 && i3==3))
-                                    genome[i1, i2, i3, i4, i5]=int.MinValue;
+                                    genome[i1, i2, i3, i4, i5] = -99;
 
                                 //doesnt want to stand or high below obsticle
                                 if ((i2 == 1 && i3 == 5) || (i2 == 0 && i3 == 5))
-                                    genome[i1, i2, i3, i4, i5] = int.MinValue;
+                                    genome[i1, i2, i3, i4, i5] = -99;
 
 
                                 //doesnt want to be stand or low above danger gold
                                 if ((i2 == 1 && i3 == 4) || (i2 == 2 && i3 == 4))
-                                    genome[i1, i2, i3, i4, i5] = int.MinValue;
+                                    genome[i1, i2, i3, i4, i5] = -99;
 
 
                                 //wants to be high on Walkable gold high and danger gold
                                 if ((i2 == 0 && i3 == 2) || (i2 == 0 && i3 == 4))
-                                    genome[i1, i2, i3, i4, i5] = int.MaxValue;
+                                    genome[i1, i2, i3, i4, i5] = 99;
 
                                 //wants to stand or low on walkable gold low
                                 if ((i2 == 1 && i3 == 1) || (i2 == 2 && i3 == 1))
-                                    genome[i1, i2, i3, i4, i5] = int.MaxValue;
+                                    genome[i1, i2, i3, i4, i5] = 99;
                             }
                         }
                     }
@@ -91,9 +91,9 @@ namespace SuperEmo
          * 5 - Obsticle
          * the number after the name indicates the type of the next three tiles 
          */
-        int ground0 = 0;
-        int ground1 = 0;
-        int ground2 = 0;
+        int tile0 = 0;
+        int tile1 = 0;
+        int tile2 = 0;
 
         //probailiy that the agent will try an action even though it knows there is a better action
         public double curiosity;
@@ -161,7 +161,7 @@ namespace SuperEmo
                         {
                             for (int i5 = 0; i5 < 5; i5++)
                             {
-                                genome[i1, i2, i3, i4, i5] = int.Parse(textgenome[globalCount]);
+                                genome[i1, i2, i3, i4, i5] = int.Parse(textgenome[globalCount++]);
                             }
                         }
                     }
@@ -181,9 +181,9 @@ namespace SuperEmo
             if (state == 1)
             {
                 int[] actions = new int[3];
-                actions[0] = this.genome[0, state, ground0, ground1, ground2];
-                actions[1] = this.genome[1, state, ground0, ground1, ground2];
-                actions[2] = this.genome[2, state, ground0, ground1, ground2];
+                actions[0] = this.genome[0, state, tile0, tile1, tile2];
+                actions[1] = this.genome[1, state, tile0, tile1, tile2];
+                actions[2] = this.genome[2, state, tile0, tile1, tile2];
                 //if in state high cannot jump, and cannot slide
                 //if in slide, cannot jump and cannot slide
 
@@ -193,8 +193,8 @@ namespace SuperEmo
                  * it representas the probability that the agent will take
                  * an action even though it (for now) thinks it is not the optimal
                  */
-                if (randomNumberGenerator.Next(0, 101) < this.curiosity * 100)
-                {
+                if (randomNumberGenerator.Next(0, 101) < this.curiosity * 99)
+               { 
                     solution = (solution + coin() + 1) % 3;
                 }
 
@@ -246,26 +246,37 @@ namespace SuperEmo
             return randomNumberGenerator.Next(0, 2);
         }
 
-        public void takeAction(int action, int state, int ground0, int ground1, int ground2)
+        public void takeAction(int action, int state, int tile0, int tile1, int tile2)
         {
             int oldState = this.state;
-            int oldGround0 = this.ground0;
-            int oldGround1 = this.ground1;
-            int oldGround2 = this.ground2;
+            int oldtile0 = this.tile0;
+            int oldtile1 = this.tile1;
+            int oldtile2 = this.tile2;
 
             this.state = state;
-            this.ground0 = ground0;
-            this.ground1 = ground1;
-            this.ground2 = ground2;
+            this.tile0 = tile0;
+            this.tile1 = tile1;
+            this.tile2 = tile2;
 
-            int thisStateEmotion = EmotionForState(state, ground0, ground1, ground2);
-            if (genome[action,oldState,oldGround0,oldGround1,oldGround2] < thisStateEmotion)
+            int thisStateEmotion = EmotionForState(state, tile0, tile1, tile2);
+            if (thisStateEmotion > 0)
             {
-                if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 100)
+                if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 99)
                 {
-                    genome[action, oldState, oldGround0, oldGround1, oldGround2]++;
+                    genome[action, oldState, oldtile0, oldtile1, oldtile2]++;
                 }
             }
+
+            this.tilesPassed++;
+            
+            
+            //wants to be high on Walkable gold high and danger gold
+            if ((state == 0 && tile0 == 2) || (state == 0 && tile0 == 4))
+                this.gold++;
+
+            //wants to stand or low on walkable gold low
+            if ((state == 1 && tile0 == 1) || (state == 2 && tile0 == 1))
+                this.gold++;
         }
 
         public int getState()
@@ -273,11 +284,11 @@ namespace SuperEmo
             return this.state;
         }
 
-        public int EmotionForState(int state, int ground0, int ground1, int ground2)
+        public int EmotionForState(int state, int tile0, int tile1, int tile2)
         {
-            int jump = this.genome[0, state, ground0, ground1, ground2];
-            int walk = this.genome[1, state, ground0, ground1, ground2];
-            int slide = this.genome[2, state, ground0, ground1, ground2];
+            int jump = this.genome[0, state, tile0, tile1, tile2];
+            int walk = this.genome[1, state, tile0, tile1, tile2];
+            int slide = this.genome[2, state, tile0, tile1, tile2];
 
             int solution = max(jump, walk);
             solution = max(solution, slide);
@@ -285,12 +296,12 @@ namespace SuperEmo
         }
 
 
-        public int ActionForState(int state, int ground0, int ground1, int ground2)
+        public int ActionForState(int state, int tile0, int tile1, int tile2)
         {
             int[] actions = new int[3];
-            actions[0] = this.genome[0, state, ground0, ground1, ground2];
-            actions[1] = this.genome[1, state, ground0, ground1, ground2];
-            actions[2] = this.genome[2, state, ground0, ground1, ground2];
+            actions[0] = this.genome[0, state, tile0, tile1, tile2];
+            actions[1] = this.genome[1, state, tile0, tile1, tile2];
+            actions[2] = this.genome[2, state, tile0, tile1, tile2];
             //if in state high cannot jump, and cannot slide
             //if in slide, cannot jump and cannot slide
 
@@ -300,7 +311,7 @@ namespace SuperEmo
 
         int findMax( int [] n){
             HashSet<int> maxIndexes= new HashSet<int>();
-            int max = int.MinValue;
+            int max = -99;
             maxIndexes.Add(max);
             for (int i = 0; i < n.Length; i++)
             {
