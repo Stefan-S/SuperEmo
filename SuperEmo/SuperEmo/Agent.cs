@@ -33,6 +33,12 @@ namespace SuperEmo
                                 if ((i2 == 1 && i3 == 5) || (i2 == 0 && i3 == 5))
                                     genome[i1, i2, i3, i4, i5] = int.MinValue;
 
+
+                                //doesnt want to be stand or low above danger gold
+                                if ((i2 == 1 && i3 == 4) || (i2 == 2 && i3 == 4))
+                                    genome[i1, i2, i3, i4, i5] = int.MinValue;
+
+
                                 //wants to be high on Walkable gold high and danger gold
                                 if ((i2 == 0 && i3 == 2) || (i2 == 0 && i3 == 4))
                                     genome[i1, i2, i3, i4, i5] = int.MaxValue;
