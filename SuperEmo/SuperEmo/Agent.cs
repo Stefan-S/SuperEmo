@@ -162,6 +162,24 @@ namespace SuperEmo
             }
         }
 
+        int maxIndexed(int x, int y, int i, int j)
+        {
+            if (x > y)
+            {
+                return i;
+            }
+            else if (y > x)
+            {
+                return j;
+            }
+            else
+            {
+                return (coin() == 0) ? i : j;
+            }
+        }
+
+
+
         public int coin()//returns 0 or 1
         {
             return randomNumberGenerator.Next(0, 2);
@@ -199,6 +217,39 @@ namespace SuperEmo
             int solution = max(jump, walk);
             solution = max(solution, slide);
             return solution;
+        }
+
+
+        public int ActionForState(int state, int ground0, int ground1, int ground2)
+        {
+            int[] actions = new int[3];
+            actions[0] = this.genome[0, state, ground0, ground1, ground2];
+            actions[1] = this.genome[1, state, ground0, ground1, ground2];
+            actions[2] = this.genome[2, state, ground0, ground1, ground2];
+
+            return findMax(actions);
+        }
+
+        int findMax( int [] n){
+            HashSet<int> maxIndexes= new HashSet<int>();
+            int max = int.MinValue;
+            maxIndexes.Add(max);
+            for (int i = 0; i < n.Length; i++)
+            {
+                if (n[i] > max)
+                {
+                    maxIndexes.Clear();
+                    max = n[i];
+                    maxIndexes.Add(i);
+                }
+                else if (n[i] == max)
+                {
+                    maxIndexes.Add(i);
+                }
+            }
+
+            int [] maximums = maxIndexes.ToArray();
+            return maximums[randomNumberGenerator.Next(0,maximums.Length)];
         }
 
     }
