@@ -8,3 +8,8 @@ C:\Users\Mone\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\SuperEmo
 C:\Users\Mone\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.exe
 C:\Users\Mone\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.pdb
 C:\Users\Mone\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Vlatko\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\SuperEmo.exe
+C:\Users\Vlatko\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\SuperEmo.pdb
+C:\Users\Vlatko\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.exe
+C:\Users\Vlatko\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\bin\Debug\SuperEmo.pdb
+C:\Users\Vlatko\Documents\GitHub\SuperEmo\SuperEmo\SuperEmo\obj\x86\Debug\ResolveAssemblyReference.cache
