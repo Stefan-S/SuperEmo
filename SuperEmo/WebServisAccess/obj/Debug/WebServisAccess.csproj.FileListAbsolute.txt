@@ -1,5 +1,0 @@
-C:\dokumenti\SuperEmo\SuperEmo\WebServisAccess\bin\WebServisAccess.dll
-C:\dokumenti\SuperEmo\SuperEmo\WebServisAccess\bin\WebServisAccess.pdb
-C:\dokumenti\SuperEmo\SuperEmo\WebServisAccess\obj\Debug\ResolveAssemblyReference.cache
-C:\dokumenti\SuperEmo\SuperEmo\WebServisAccess\obj\Debug\WebServisAccess.dll
-C:\dokumenti\SuperEmo\SuperEmo\WebServisAccess\obj\Debug\WebServisAccess.pdb
