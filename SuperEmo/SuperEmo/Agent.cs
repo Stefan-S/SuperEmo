@@ -309,7 +309,7 @@ namespace SuperEmo
             return findMax(actions);
         }
 
-        int findMax( int [] n){
+        int findMax(int [] n){
             HashSet<int> maxIndexes= new HashSet<int>();
             int max = Int16.MinValue;
             maxIndexes.Add(max);
@@ -329,6 +329,14 @@ namespace SuperEmo
 
             int [] maximums = maxIndexes.ToArray();
             return maximums[randomNumberGenerator.Next(0,maximums.Length)];
+        }
+
+        public Boolean isDead(int state,int tile0)
+        {
+            if((state == 1 && tile0 == 3) || (state == 2 && tile0 == 3) || (state == 1 && tile0 == 4) || (state == 2 && tile0 == 4) || (state == 1 && tile0 == 5) || (state == 0 && tile0 == 5))
+                return true;
+            else
+                return false;
         }
 
     }
