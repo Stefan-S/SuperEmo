@@ -292,3 +292,17 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+#w1,#w2,#w3,#w4,#w5 
+{
+    margin:0px;
+    padding:0px;
+    position:relative;
+}
+
+#gameWindow
+{
+    margin:0px;
+    padding:0px;
+    border-width:0px;
+}

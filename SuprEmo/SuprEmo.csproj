@@ -50,11 +50,17 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\1_WGL.png" />
+    <Content Include="Images\2_WGH.png" />
+    <Content Include="Images\3_D.png" />
+    <Content Include="Images\4_DG.png" />
+    <Content Include="Images\5_O.png" />
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Images\basicTile.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
