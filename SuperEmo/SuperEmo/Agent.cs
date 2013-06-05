@@ -194,7 +194,7 @@ namespace SuperEmo
                  * an action even though it (for now) thinks it is not the optimal
                  */
                 if (randomNumberGenerator.Next(0, 101) < this.curiosity * 99)
-               { 
+                { 
                     solution = (solution + coin() + 1) % 3;
                 }
 
@@ -311,7 +311,7 @@ namespace SuperEmo
 
         int findMax( int [] n){
             HashSet<int> maxIndexes= new HashSet<int>();
-            int max = -99;
+            int max = Int16.MinValue;
             maxIndexes.Add(max);
             for (int i = 0; i < n.Length; i++)
             {
