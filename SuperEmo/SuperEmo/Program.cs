@@ -9,8 +9,8 @@ namespace SuperEmo
     {
         static void Main(string[] args)
         {
-            //for (int j = 0; j < 50; j++)
-            //{
+            for (int j = 0; j < 50; j++)
+            {
                 Enviroment env = new Enviroment();
                 Agent nevena = new Agent();
                 nevena.sensitivity = 1;
@@ -24,7 +24,7 @@ namespace SuperEmo
                     env.drawEnvironment();
                     int a = nevena.getAction(); //zemi akcija od agent
                     Console.WriteLine("State: " + nevena.getState() + " I will do: " +a+"\n");
-                    System.Threading.Thread.Sleep(100);
+                    System.Threading.Thread.Sleep(10);
 
                     int[] tiles = env.lastNStates(4); //zadnji 4
                     //ako smo poginuli
@@ -63,6 +63,6 @@ namespace SuperEmo
                 nevena.save("nevena.txt");
                 Console.Write("\n\n\n");
             }
-        //}
+        }
     }
 }

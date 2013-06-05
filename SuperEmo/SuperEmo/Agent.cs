@@ -27,25 +27,25 @@ namespace SuperEmo
                             {
                                 //doesnt want to be stand or low above danger
                                 if((i2==1 && i3==3) || (i2==2 && i3==3))
-                                    genome[i1, i2, i3, i4, i5] = -99;
+                                    genome[i1, i2, i3, i4, i5] = -20;
 
                                 //doesnt want to stand or high below obsticle
                                 if ((i2 == 1 && i3 == 5) || (i2 == 0 && i3 == 5))
-                                    genome[i1, i2, i3, i4, i5] = -99;
+                                    genome[i1, i2, i3, i4, i5] = -20;
 
 
                                 //doesnt want to be stand or low above danger gold
                                 if ((i2 == 1 && i3 == 4) || (i2 == 2 && i3 == 4))
-                                    genome[i1, i2, i3, i4, i5] = -99;
+                                    genome[i1, i2, i3, i4, i5] = -20;
 
 
                                 //wants to be high on Walkable gold high and danger gold
                                 if ((i2 == 0 && i3 == 2) || (i2 == 0 && i3 == 4))
-                                    genome[i1, i2, i3, i4, i5] = 99;
+                                    genome[i1, i2, i3, i4, i5] = 20;
 
                                 //wants to stand or low on walkable gold low
                                 if ((i2 == 1 && i3 == 1) || (i2 == 2 && i3 == 1))
-                                    genome[i1, i2, i3, i4, i5] = 99;
+                                    genome[i1, i2, i3, i4, i5] = 20;
                             }
                         }
                     }
@@ -264,6 +264,12 @@ namespace SuperEmo
                 if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 99)
                 {
                     genome[action, oldState, oldtile0, oldtile1, oldtile2]++;
+                }
+            }
+            else{
+                if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 99)
+                {
+                    genome[action, oldState, oldtile0, oldtile1, oldtile2]--;
                 }
             }
 
