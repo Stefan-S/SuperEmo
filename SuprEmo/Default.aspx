@@ -16,11 +16,18 @@
          <asp:Image class="img" ID="Image5" runat="server" />
          <asp:Image class="img" ID="agent" runat="server" />
          
-            <div id="rightInfoDiv">
-                ovoj div e za neso info, i se prostira vo ista visina kako i prozorecot od igricata
-            </div>
+        <div id="rightInfoDiv">
+            Coins Collected
+            <asp:Label ID="coins" runat="server" Text="0"></asp:Label>
+            </br>
+            Lives Lived
+            <asp:Label ID="lives" runat="server" Text="0"></asp:Label>
+            </br>
+            TilesPassed
+            <asp:Label ID="tiles" runat="server" Text="0"></asp:Label>
+            </br>
+            <asp:Button ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
+
         </div>
-    <p>
-    end    
-    </p>
+        </div>
 </asp:Content>

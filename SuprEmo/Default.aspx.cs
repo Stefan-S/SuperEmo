@@ -11,8 +11,21 @@ namespace SuprEmo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            SuprEmo.Agent nevena = new SuprEmo.Agent();
-            SuprEmo.AgentEnvironment environment = new SuprEmo.AgentEnvironment();
+
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            SuprEmo.AgentEnvironment environment = (SuprEmo.AgentEnvironment)Session["env"];
+            if (nevena == null)
+            {
+                nevena = new SuprEmo.Agent();
+                environment = new SuprEmo.AgentEnvironment();
+            }
+            else
+            {
+                int action = nevena.getAction();
+                environment.generateState();
+                int[] tilesIn = environment.lastNStates(5);
+                nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
+            }
             Dictionary<int, String> pictures_for_tile = new Dictionary<int, string>();
             Dictionary<int, String> pictures_for_state = new Dictionary<int, string>();
             pictures_for_tile.Add(0, "Images/basicTile.png");
@@ -40,6 +53,20 @@ namespace SuprEmo
             Image5.ImageUrl = url;
             pictures_for_state.TryGetValue(nevena.getState(), out url);
             agent.ImageUrl = url;
+            coins.Text = nevena.gold + "";
+            lives.Text = nevena.lives + "";
+            tiles.Text = nevena.tilesPassed + "";
+
+            Session["agent"] = nevena;
+            Session["env"] = environment;
+        }
+
+        public void resetButtonClick(Object sender, EventArgs e)
+        {
+
+            Session["agent"] = null;
+            Session["env"] = null;
+            Response.Redirect("~/default.aspx");
 
         }
     }
