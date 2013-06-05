@@ -6,7 +6,7 @@ using System.Web;
 namespace SuprEmo
 {
         //the agent
-        class Agent
+        public class Agent
         {
 
             //tabula rasa constructor

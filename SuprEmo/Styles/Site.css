@@ -293,14 +293,14 @@ div.accountInfo
     padding-right: 10px;
 }
 
-#w1,#w2,#w3,#w4,#w5 
+.img
 {
     margin:0px;
     padding:0px;
     position:relative;
 }
 
-#w1,#w2,#w3,#w4 
+.img
 {
     float:left;
 }
@@ -310,4 +310,15 @@ div.accountInfo
     margin:0px;
     padding:0px;
     border-width:0px;
+}
+
+#rightInfoDiv
+{
+    width:100%;
+    height:480px;
+}
+
+#MainContent_agent
+{
+    left:-512px;
 }

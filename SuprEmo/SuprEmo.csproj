@@ -60,6 +60,9 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Images\agent_0_Jump.png" />
+    <Content Include="Images\agent_1_Stand.png" />
+    <Content Include="Images\agent_2_Slide.png" />
     <Content Include="Images\basicTile.png" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
