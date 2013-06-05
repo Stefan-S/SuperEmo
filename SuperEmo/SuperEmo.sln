@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperEmo", "SuperEmo\SuperEmo.csproj", "{4F31762A-B3E8-4E19-A03C-5A01A1C0515E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServisAccess", "WebServisAccess\WebServisAccess.csproj", "{C3391DFA-615E-4C99-A76D-0DB203F85612}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperEmoWeb", "SuperEmoWeb\SuperEmoWeb.csproj", "{1511CF90-0159-4B6C-A17C-5BE5C52CC653}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,16 +25,16 @@ Global
 		{4F31762A-B3E8-4E19-A03C-5A01A1C0515E}.Release|Mixed Platforms.Build.0 = Release|x86
 		{4F31762A-B3E8-4E19-A03C-5A01A1C0515E}.Release|x86.ActiveCfg = Release|x86
 		{4F31762A-B3E8-4E19-A03C-5A01A1C0515E}.Release|x86.Build.0 = Release|x86
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{C3391DFA-615E-4C99-A76D-0DB203F85612}.Release|x86.ActiveCfg = Release|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1511CF90-0159-4B6C-A17C-5BE5C52CC653}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
