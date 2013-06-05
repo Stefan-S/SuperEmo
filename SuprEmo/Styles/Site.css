@@ -300,6 +300,11 @@ div.accountInfo
     position:relative;
 }
 
+#w1,#w2,#w3,#w4 
+{
+    float:left;
+}
+
 #gameWindow
 {
     margin:0px;
