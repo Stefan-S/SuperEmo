@@ -303,13 +303,20 @@ namespace SuprEmo
 
         public int EmotionForState(int state, int tile0, int tile1, int tile2)
         {
-            int jump = this.genome[0, state, tile0, tile1, tile2];
-            int walk = this.genome[1, state, tile0, tile1, tile2];
-            int slide = this.genome[2, state, tile0, tile1, tile2];
+            if (state == 1)
+            {
+                int jump = this.genome[0, state, tile0, tile1, tile2];
+                int walk = this.genome[1, state, tile0, tile1, tile2];
+                int slide = this.genome[2, state, tile0, tile1, tile2];
 
-            int solution = max(jump, walk);
-            solution = max(solution, slide);
-            return solution;
+                int solution = max(jump, walk);
+                solution = max(solution, slide);
+                return solution;
+            }
+            else
+            {
+                return this.genome[1, state, tile0, tile1, tile2];
+            }
         }
 
 

@@ -28,10 +28,17 @@ namespace SuprEmo
             }
             else
             {
-                int action = nevena.getAction();
-                environment.generateState();
-                int[] tilesIn = environment.lastNStates(5);
-                nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
+                if (Session["pass"] != null)
+                {
+                    Session["pass"] = null;
+                }
+                else
+                {
+                    int action = nevena.getAction();
+                    environment.generateState();
+                    int[] tilesIn = environment.lastNStates(5);
+                    nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
+                }
             }
 
             //ginenjeto tuka e so oldState-ovi za da mozeme da go vidime
@@ -144,6 +151,29 @@ namespace SuprEmo
         public void HCtraining(Object sender, EventArgs e)
         {
             train(1000000);
+        }
+
+        public void couriosityDec(Object sender, EventArgs e)
+        {
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            Session["pass"] = "pass";
+            if (nevena.curiosity > 0)
+            {
+                nevena.curiosity -= 0.1;
+            }
+            Response.Redirect("~/default.aspx");
+        }
+
+
+        public void couriosityInc(Object sender, EventArgs e)
+        {
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            Session["pass"] = "pass";
+            if (nevena.curiosity < 1)
+            {
+                nevena.curiosity += 0.1;
+            }
+            Response.Redirect("~/default.aspx");
         }
 
 

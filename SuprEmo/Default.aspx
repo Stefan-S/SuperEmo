@@ -50,14 +50,14 @@
             Couriosity:
             <asp:Label ID="couriosity" runat="server" Text="0"></asp:Label>
             </br>
+            <asp:Button class="butonka" ID="couriosityDecBtn" runat="server" Text="-" OnClick="couriosityDec" />
+            <asp:Button class="butonka" ID="couriosityIncBtn" runat="server" Text="+" OnClick="couriosityInc"/>
+            </br>
             Sensitivity:
             <asp:Label ID="sensitivity" runat="server" Text="0"></asp:Label>
             </br>
-            </br>
             <asp:Button class= "butonka" ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
-            </br>
             <asp:Button class= "butonka" ID="trainingbtn" runat="server" Text="Train" onclick="training" />
-             </br>
             <asp:Button class= "butonka" ID="HCtrainingbtn" runat="server" Text="Train Hard" onclick="HCtraining" />
        </div>
         </div>
