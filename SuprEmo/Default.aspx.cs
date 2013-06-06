@@ -34,7 +34,9 @@ namespace SuprEmo
                 nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
             }
 
-
+            //ginenjeto tuka e so oldState-ovi za da mozeme da go vidime
+            //dole u train e so momentalni
+            //neznam kako e poispravno
             if (nevena.isDead(nevena.getOldState(), nevena.oldTile0()) == true)
             {
                 Agent tmp = nevena;
@@ -145,7 +147,8 @@ namespace SuprEmo
         }
 
 
-
+        //treniranje treba da se prai so randomci
+        //t.e. bez ljubopitnost nemas dobar trening
         public void train(int n)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
