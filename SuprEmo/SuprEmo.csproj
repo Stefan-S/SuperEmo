@@ -52,8 +52,23 @@
   <ItemGroup>
     <Content Include="Images\1_WGL.png" />
     <Content Include="Images\2_WGH.png" />
+    <Content Include="Images\3DMatrix1.png" />
+    <Content Include="Images\3DMatrix2.png" />
+    <Content Include="Images\3DMatrix3.png" />
+    <Content Include="Images\3DMatrix4.png" />
+    <Content Include="Images\3DMatrix5.png" />
+    <Content Include="Images\3DMatrix6.png" />
     <Content Include="Images\3_D.png" />
     <Content Include="Images\4_DG.png" />
+    <Content Include="Images\5DMatrix11.png" />
+    <Content Include="Images\5DMatrix12.png" />
+    <Content Include="Images\5DMatrix13.png" />
+    <Content Include="Images\5DMatrix21.png" />
+    <Content Include="Images\5DMatrix22.png" />
+    <Content Include="Images\5DMatrix23.png" />
+    <Content Include="Images\5DMatrix31.png" />
+    <Content Include="Images\5DMatrix32.png" />
+    <Content Include="Images\5DMatrix33.png" />
     <Content Include="Images\5_O.png" />
     <Content Include="About.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
