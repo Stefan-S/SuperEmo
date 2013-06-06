@@ -21,15 +21,19 @@ namespace SuprEmo
         {
             //walkable
             states.AddLast(0);
+            skins.AddLast(0);
             states.AddLast(0);
+            skins.AddLast(0);
             states.AddLast(0);
+            skins.AddLast(0);
             states.AddLast(0);
+            skins.AddLast(0);
             generateState();
 
         }
 
 
-        protected LinkedList<int> pictures = new LinkedList<int>();
+        protected LinkedList<int> skins = new LinkedList<int>();
         protected LinkedList<int> states = new LinkedList<int>();
         protected Random randomNumberGenerator = new Random();
         public int[] nextState(){
@@ -75,7 +79,39 @@ namespace SuprEmo
                     break;
             }
             states.AddLast(nextState);
+
+            switch (states.Last.Value)
+            {
+                case 0:
+                case 1:
+                case 2:
+                    skins.AddLast(0);
+                    break;
+                case 3:
+                case 4:
+                    skins.AddLast(randomNumberGenerator.Next(0, 2));
+                    break;
+                case 5:
+                    skins.AddLast(randomNumberGenerator.Next(0, 3));
+                    break;
+            }
+
             return nextState;
+        }
+
+        public int[] lastNSkins(int n)
+        {
+            int[] ret = new int[n];
+            var iter = skins.Last;
+            for (int i = n - 1; i >= 0; i--)
+            {
+                ret[i] = iter.Value;
+                if (i != 0)
+                {
+                    iter = iter.Previous;
+                }
+            }
+            return ret;
         }
 
         public void drawEnvironment()

@@ -59,16 +59,16 @@ namespace SuprEmo
 
             Dictionary<int, String> pictures_for_tile = new Dictionary<int, string>();
             Dictionary<int, String> pictures_for_state = new Dictionary<int, string>();
-            pictures_for_tile.Add(0, "Images/0_W_0.png");
+            pictures_for_tile.Add(0, "Images/0_W_");
 
 
-            pictures_for_tile.Add(1, "Images/1_WCL_0.png");
-            pictures_for_tile.Add(2, "Images/2_WCH_0.png");
+            pictures_for_tile.Add(1, "Images/1_WCL_");
+            pictures_for_tile.Add(2, "Images/2_WCH_");
 
 
-            pictures_for_tile.Add(3, "Images/3_D_" + rand.Next(0,2) + ".png");
-            pictures_for_tile.Add(4, "Images/4_DG_" + rand.Next(0, 2) + ".png");
-            pictures_for_tile.Add(5, "Images/5_O_" + rand.Next(0, 3) + ".png");
+            pictures_for_tile.Add(3, "Images/3_D_");
+            pictures_for_tile.Add(4, "Images/4_DG_");
+            pictures_for_tile.Add(5, "Images/5_O_");
 
             pictures_for_state.Add(0, "Images/agent_0_Jump.png");
             pictures_for_state.Add(1, "Images/agent_1_Stand_" + rand.Next(0, 2) + ".png");
@@ -76,18 +76,19 @@ namespace SuprEmo
 
             int[] states = environment.lastNStates(5);
             String url;
+            int[] skins=environment.lastNSkins(5);
             pictures_for_tile.TryGetValue(states[0], out  url);
-            Image1.ImageUrl = url;
+            Image1.ImageUrl = url+skins[0]+".png";
             pictures_for_tile.TryGetValue(states[1], out  url);
-            Image2.ImageUrl = url;
+            Image2.ImageUrl = url + skins[1] + ".png";
             pictures_for_tile.TryGetValue(states[2], out  url);
-            Image3.ImageUrl = url;
+            Image3.ImageUrl = url + skins[2] + ".png";
             pictures_for_tile.TryGetValue(states[3], out  url);
-            Image4.ImageUrl = url;
+            Image4.ImageUrl = url + skins[3] + ".png";
             pictures_for_tile.TryGetValue(states[4], out  url);
-            Image5.ImageUrl = url;
+            Image5.ImageUrl = url + skins[4] + ".png";
             pictures_for_state.TryGetValue(nevena.getState(), out url);
-            agent.ImageUrl = url;
+            agent.ImageUrl = url; 
             coins.Text = nevena.gold + "";
             lives.Text = nevena.lives + "";
             tiles.Text = nevena.tilesPassed + "";
