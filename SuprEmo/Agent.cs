@@ -210,11 +210,11 @@ namespace SuprEmo
 
         int max(int x, int y)
         {
-            if (x > y)
+            if (Math.Abs(x) > Math.Abs(y))
             {
                 return x;
             }
-            else if (y > x)
+            else if (Math.Abs(y) > Math.Abs(x))
             {
                 return y;
             }
