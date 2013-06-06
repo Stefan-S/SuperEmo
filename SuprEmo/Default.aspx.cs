@@ -34,12 +34,17 @@ namespace SuprEmo
                 nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
             }
 
-            //ova ne raboti seushte!
-            if (nevena.isDead(nevena.getState(),nevena.getTile0())==true)
+
+            if (nevena.isDead(nevena.getOldState(), nevena.oldTile0()) == true)
             {
                 Agent tmp = nevena;
                 nevena = new Agent();
-                nevena.genome = tmp.genome;
+                nevena.genome = tmp.getCopyOfGenome();
+                nevena.curiosity = tmp.curiosity;
+                nevena.sensitivity = tmp.sensitivity;
+                nevena.lives = tmp.lives;
+                environment = new AgentEnvironment();
+                nevena.lives++;
             }
 
 
@@ -111,6 +116,11 @@ namespace SuprEmo
 
             matrix += "</table>";
             Matrix2D.Controls.Add(new LiteralControl(matrix));
+
+
+
+
+
             Session["agent"] = nevena;
             Session["env"] = environment;
         }
@@ -123,17 +133,41 @@ namespace SuprEmo
             Response.Redirect("~/default.aspx");
 
         }
-        public void immortalTraining(Object sender, EventArgs e)
+
+        public void training(Object sender, EventArgs e)
+        {
+            train(100000);
+        }
+
+        public void HCtraining(Object sender, EventArgs e)
+        {
+            train(100000000);
+        }
+
+
+
+        public void train(int n)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
             SuprEmo.AgentEnvironment environment = (SuprEmo.AgentEnvironment)Session["env"];
 
-            for (int i = 0; i < 10000000; i++)
+            for (int i = 0; i < n; i++)
             {
                 int action = nevena.getAction();
                 environment.generateState();
                 int[] tilesIn = environment.lastNStates(5);
                 nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
+                if (nevena.isDead(nevena.getState(), nevena.getTile0()) == true)
+                {
+                    Agent tmp = nevena;
+                    nevena = new Agent();
+                    nevena.genome = tmp.getCopyOfGenome();
+                    nevena.curiosity = tmp.curiosity;
+                    nevena.sensitivity = tmp.sensitivity;
+                    nevena.lives = tmp.lives;
+                    environment = new AgentEnvironment();
+                    nevena.lives++;
+                }
             }
 
 

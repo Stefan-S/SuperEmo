@@ -184,13 +184,22 @@ namespace SuprEmo {
         protected global::System.Web.UI.WebControls.Button Reset;
         
         /// <summary>
-        /// train control.
+        /// trainingbtn control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button train;
+        protected global::System.Web.UI.WebControls.Button trainingbtn;
+        
+        /// <summary>
+        /// HCtrainingbtn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button HCtrainingbtn;
         
         /// <summary>
         /// Matrix5D control.
