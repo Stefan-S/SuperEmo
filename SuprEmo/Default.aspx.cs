@@ -143,7 +143,7 @@ namespace SuprEmo
 
         public void HCtraining(Object sender, EventArgs e)
         {
-            train(100000000);
+            train(1000000);
         }
 
 
