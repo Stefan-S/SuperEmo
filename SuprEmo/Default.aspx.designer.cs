@@ -139,6 +139,42 @@ namespace SuprEmo {
         protected global::System.Web.UI.WebControls.Label nextAction;
         
         /// <summary>
+        /// currentEmotion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label currentEmotion;
+        
+        /// <summary>
+        /// previousEmotion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label previousEmotion;
+        
+        /// <summary>
+        /// couriosity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label couriosity;
+        
+        /// <summary>
+        /// sensitivity control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label sensitivity;
+        
+        /// <summary>
         /// Reset control.
         /// </summary>
         /// <remarks>

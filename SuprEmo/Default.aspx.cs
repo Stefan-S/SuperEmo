@@ -17,6 +17,9 @@ namespace SuprEmo
             if (nevena == null)
             {
                 nevena = new SuprEmo.Agent();
+
+                nevena.curiosity = 0;
+                nevena.sensitivity = 1;
                 //for better testing
 
                 environment = new AgentEnvironment();
@@ -65,7 +68,11 @@ namespace SuprEmo
             tile2.Text = nevena.getTile2() + "";
             state.Text = nevena.getState() + "";
             nextAction.Text = nevena.getAction() + "";
+            currentEmotion.Text = nevena.EmotionForState(nevena.getState(), nevena.getTile0(), nevena.getTile1(), nevena.getTile2()) + "";
             int [] last = nevena.getLastChangedEmotionLocation();
+            previousEmotion.Text = nevena.EmotionForState(last[1], last[2], last[3], last[4])+"";
+            couriosity.Text = nevena.curiosity + "";
+            sensitivity.Text = nevena.sensitivity + "";
             Matrix5D.ImageUrl = "Images/5DMatrix" + (last[0] + 1) + "" + (last[1] + 1) + ".png";
 
             Matrix3D.ImageUrl = "Images/3DMatrix"+(last[2]+1)+".png";
