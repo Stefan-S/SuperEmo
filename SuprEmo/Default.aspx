@@ -6,7 +6,8 @@
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2>
         Supremo Rulz
-    </h2>
+        <asp:Button class="butonka" ID="Button4" runat="server" Text="Step" OnClientClick="function fnstep() { function(){location.reload(true);}}"  style="float:right" />
+      </h2>
      <div id="gameWindow">
          <asp:Image class="img" ID="Image1" runat="server" />
                   
@@ -26,15 +27,6 @@
             Passed:
             <asp:Label ID="tiles" runat="server" Text="0"></asp:Label>
             </br>
-            T0:
-            <asp:Label ID="tile0" runat="server" Text="0"></asp:Label>
-            </br>
-            T1:
-            <asp:Label ID="tile1" runat="server" Text="0"></asp:Label>
-            </br>
-            T2:
-            <asp:Label ID="tile2" runat="server" Text="0"></asp:Label>
-            </br>
             State:
             <asp:Label ID="state" runat="server" Text="0"></asp:Label>
             </br>
@@ -50,17 +42,19 @@
             Couriosity:
             <asp:Label ID="couriosity" runat="server" Text="0"></asp:Label>
             </br>
-            <asp:Button class="butonka" ID="couriosityDecBtn" runat="server" Text="-" OnClick="couriosityDec" />
-            <asp:Button class="butonka" ID="couriosityIncBtn" runat="server" Text="+" OnClick="couriosityInc"/>
+            <asp:Button Width=25 class="butonka" ID="couriosityDecBtn" runat="server" Text="-" OnClick="couriosityDec"  style="float:left" />
+            <asp:Button Width=25 class="butonka" ID="couriosityIncBtn" runat="server" Text="+" OnClick="couriosityInc"/>
             </br>
             Sensitivity:
             <asp:Label ID="sensitivity" runat="server" Text="0"></asp:Label>
             </br>
+            <asp:Button Width=25 class="butonka" ID="Button2" runat="server" Text="-" OnClick="sensitivityDec"  style="float:left" />
+            <asp:Button Width=25 class="butonka" ID="Button3" runat="server" Text="+" OnClick="sensitivityInc"/>
+            </br>
             <asp:Button class= "butonka" ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
             <asp:Button class= "butonka" ID="trainingbtn" runat="server" Text="Train" onclick="training" />
             <asp:Button class= "butonka" ID="HCtrainingbtn" runat="server" Text="Train Hard" onclick="HCtraining" />
-       </div>
-        </div>
+      </div>
         <div id="genome">
         <table width=100%>
             <tr>
@@ -80,8 +74,6 @@
                 </td>
             </tr>
         </table>
-
-
-
-    </div>
+        </div>
+        <asp:PlaceHolder ID="script" runat="server"></asp:PlaceHolder>
 </asp:Content>

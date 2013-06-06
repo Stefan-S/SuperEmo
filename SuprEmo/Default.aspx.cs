@@ -11,7 +11,7 @@ namespace SuprEmo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Random rand = new Random();
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
             SuprEmo.AgentEnvironment environment = (SuprEmo.AgentEnvironment)Session["env"];
             if (nevena == null)
@@ -59,15 +59,19 @@ namespace SuprEmo
 
             Dictionary<int, String> pictures_for_tile = new Dictionary<int, string>();
             Dictionary<int, String> pictures_for_state = new Dictionary<int, string>();
-            pictures_for_tile.Add(0, "Images/basicTile.png");
-            pictures_for_tile.Add(1, "Images/1_WGL.png");
-            pictures_for_tile.Add(2, "Images/2_WGH.png");
-            pictures_for_tile.Add(3, "Images/3_D.png");
-            pictures_for_tile.Add(4, "Images/4_DG.png");
-            pictures_for_tile.Add(5, "Images/5_O.png");
+            pictures_for_tile.Add(0, "Images/0_W_0.png");
+
+
+            pictures_for_tile.Add(1, "Images/1_WCL_0.png");
+            pictures_for_tile.Add(2, "Images/2_WCH_0.png");
+
+
+            pictures_for_tile.Add(3, "Images/3_D_" + rand.Next(0,2) + ".png");
+            pictures_for_tile.Add(4, "Images/4_DG_" + rand.Next(0, 2) + ".png");
+            pictures_for_tile.Add(5, "Images/5_O_" + rand.Next(0, 3) + ".png");
 
             pictures_for_state.Add(0, "Images/agent_0_Jump.png");
-            pictures_for_state.Add(1, "Images/agent_1_Stand.png");
+            pictures_for_state.Add(1, "Images/agent_1_Stand_" + rand.Next(0, 2) + ".png");
             pictures_for_state.Add(2, "Images/agent_2_Slide.png");
 
             int[] states = environment.lastNStates(5);

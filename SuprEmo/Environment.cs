@@ -27,8 +27,9 @@ namespace SuprEmo
             generateState();
 
         }
-        
-        
+
+
+        protected LinkedList<int> pictures = new LinkedList<int>();
         protected LinkedList<int> states = new LinkedList<int>();
         protected Random randomNumberGenerator = new Random();
         public int[] nextState(){

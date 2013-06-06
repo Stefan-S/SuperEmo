@@ -51,7 +51,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\0_W_0.png" />
-    <Content Include="Images\1_WCG_0.png" />
+    <Content Include="Images\1_WCL_0.png" />
     <Content Include="Images\1_WGL.png" />
     <Content Include="Images\2_WCH_0.png" />
     <Content Include="Images\2_WGH.png" />
@@ -87,6 +87,8 @@
     <Content Include="Images\5_O_2.png" />
     <Content Include="Images\agent_0_Jump.png" />
     <Content Include="Images\agent_1_Stand.png" />
+    <Content Include="Images\agent_1_Stand_0.png" />
+    <Content Include="Images\agent_1_Stand_1.png" />
     <Content Include="Images\agent_2_Slide.png" />
     <Content Include="Images\basicTile.png" />
     <Content Include="Scripts\cookieHandilg.js" />
