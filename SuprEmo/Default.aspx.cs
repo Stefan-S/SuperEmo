@@ -33,6 +33,16 @@ namespace SuprEmo
                 int[] tilesIn = environment.lastNStates(5);
                 nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
             }
+
+            //ova ne raboti seushte!
+            if (nevena.isDead(nevena.getState(),nevena.getTile0())==true)
+            {
+                Agent tmp = nevena;
+                nevena = new Agent();
+                nevena.genome = tmp.genome;
+            }
+
+
             Dictionary<int, String> pictures_for_tile = new Dictionary<int, string>();
             Dictionary<int, String> pictures_for_state = new Dictionary<int, string>();
             pictures_for_tile.Add(0, "Images/basicTile.png");
@@ -112,6 +122,24 @@ namespace SuprEmo
             Session["env"] = null;
             Response.Redirect("~/default.aspx");
 
+        }
+        public void immortalTraining(Object sender, EventArgs e)
+        {
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            SuprEmo.AgentEnvironment environment = (SuprEmo.AgentEnvironment)Session["env"];
+
+            for (int i = 0; i < 10000000; i++)
+            {
+                int action = nevena.getAction();
+                environment.generateState();
+                int[] tilesIn = environment.lastNStates(5);
+                nevena.takeAction(action, action, tilesIn[1], tilesIn[2], tilesIn[3]);
+            }
+
+
+            Session["agent"] = nevena;
+            Session["env"] = environment;
+            Response.Redirect("~/default.aspx");
         }
     }
 }

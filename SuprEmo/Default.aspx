@@ -55,6 +55,8 @@
             </br>
             </br>
             <asp:Button class= "butonka" ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
+            </br>
+            <asp:Button class= "butonka" ID="train" runat="server" Text="Train" onclick="immortalTraining" />
        </div>
         </div>
         <div id="genome">

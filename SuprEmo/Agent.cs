@@ -280,7 +280,7 @@ namespace SuprEmo
                 {
                     if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 99)
                     {
-                        genome[action, oldState, oldtile0, oldtile1, oldtile2]--;
+                        genome[action, oldState, oldtile0, oldtile1, oldtile2]=-20;
                     }
                 }
 
