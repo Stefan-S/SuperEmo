@@ -210,11 +210,11 @@ namespace SuprEmo
 
         int max(int x, int y)
         {
-            if (Math.Abs(x) > Math.Abs(y))
+            if (x > y)
             {
                 return x;
             }
-            else if (Math.Abs(y) > Math.Abs(x))
+            else if (y > x)
             {
                 return y;
             }
@@ -329,7 +329,7 @@ namespace SuprEmo
         int findMax(int[] n)
         {
             HashSet<int> maxIndexes = new HashSet<int>();
-            int max = Int16.MinValue;
+            int max = int.MinValue;
             maxIndexes.Add(max);
             for (int i = 0; i < n.Length; i++)
             {
