@@ -50,7 +50,10 @@
     <Reference Include="System.Web.ApplicationServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\0_W_0.png" />
+    <Content Include="Images\1_WCG_0.png" />
     <Content Include="Images\1_WGL.png" />
+    <Content Include="Images\2_WCH_0.png" />
     <Content Include="Images\2_WGH.png" />
     <Content Include="Images\3DMatrix1.png" />
     <Content Include="Images\3DMatrix2.png" />
@@ -59,7 +62,11 @@
     <Content Include="Images\3DMatrix5.png" />
     <Content Include="Images\3DMatrix6.png" />
     <Content Include="Images\3_D.png" />
+    <Content Include="Images\3_D_0.png" />
+    <Content Include="Images\3_D_1.png" />
     <Content Include="Images\4_DG.png" />
+    <Content Include="Images\4_DG_0.png" />
+    <Content Include="Images\4_DG_1.png" />
     <Content Include="Images\5DMatrix11.png" />
     <Content Include="Images\5DMatrix12.png" />
     <Content Include="Images\5DMatrix13.png" />
@@ -75,10 +82,14 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="Images\5_O_0.png" />
+    <Content Include="Images\5_O_1.png" />
+    <Content Include="Images\5_O_2.png" />
     <Content Include="Images\agent_0_Jump.png" />
     <Content Include="Images\agent_1_Stand.png" />
     <Content Include="Images\agent_2_Slide.png" />
     <Content Include="Images\basicTile.png" />
+    <Content Include="Scripts\cookieHandilg.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

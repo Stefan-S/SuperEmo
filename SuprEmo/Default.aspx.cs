@@ -28,7 +28,7 @@ namespace SuprEmo
             }
             else
             {
-                if (Session["pass"] != null)
+                if ((string)Session["pass"] == "pass")
                 {
                     Session["pass"] = null;
                 }
@@ -87,9 +87,6 @@ namespace SuprEmo
             coins.Text = nevena.gold + "";
             lives.Text = nevena.lives + "";
             tiles.Text = nevena.tilesPassed + "";
-            tile0.Text = nevena.getTile0()+"";
-            tile1.Text = nevena.getTile1() + "";
-            tile2.Text = nevena.getTile2() + "";
             state.Text = nevena.getState() + "";
             nextAction.Text = nevena.getAction() + "";
             currentEmotion.Text = nevena.EmotionForState(nevena.getState(), nevena.getTile0(), nevena.getTile1(), nevena.getTile2()) + "";
@@ -125,10 +122,6 @@ namespace SuprEmo
 
             matrix += "</table>";
             Matrix2D.Controls.Add(new LiteralControl(matrix));
-
-
-
-
 
             Session["agent"] = nevena;
             Session["env"] = environment;
@@ -166,6 +159,29 @@ namespace SuprEmo
 
 
         public void couriosityInc(Object sender, EventArgs e)
+        {
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            Session["pass"] = "pass";
+            if (nevena.curiosity < 1)
+            {
+                nevena.curiosity += 0.1;
+            }
+            Response.Redirect("~/default.aspx");
+        }
+
+        public void sensitivityDec(Object sender, EventArgs e)
+        {
+            SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
+            Session["pass"] = "pass";
+            if (nevena.curiosity > 0)
+            {
+                nevena.curiosity -= 0.1;
+            }
+            Response.Redirect("~/default.aspx");
+        }
+
+
+        public void sensitivityInc(Object sender, EventArgs e)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
             Session["pass"] = "pass";
