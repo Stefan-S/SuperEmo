@@ -19,11 +19,11 @@ namespace SuprEmo
                 {
                     for (int i2 = 0; i2 < 3; i2++)
                     {
-                        for (int i3 = 0; i3 < 5; i3++)
+                        for (int i3 = 0; i3 < 6; i3++)
                         {
-                            for (int i4 = 0; i4 < 5; i4++)
+                            for (int i4 = 0; i4 < 6; i4++)
                             {
-                                for (int i5 = 0; i5 < 5; i5++)
+                                for (int i5 = 0; i5 < 6; i5++)
                                 {
                                     //doesnt want to be stand or low above danger
                                     if ((i2 == 1 && i3 == 3) || (i2 == 2 && i3 == 3))
@@ -124,11 +124,11 @@ namespace SuprEmo
                 {
                     for (int i2 = 0; i2 < 3; i2++)
                     {
-                        for (int i3 = 0; i3 < 5; i3++)
+                        for (int i3 = 0; i3 < 6; i3++)
                         {
-                            for (int i4 = 0; i4 < 5; i4++)
+                            for (int i4 = 0; i4 < 6; i4++)
                             {
-                                for (int i5 = 0; i5 < 5; i5++)
+                                for (int i5 = 0; i5 < 6; i5++)
                                 {
                                     saved += genome[i1, i2, i3, i4, i5] + ",";
                                 }
@@ -156,11 +156,11 @@ namespace SuprEmo
                 {
                     for (int i2 = 0; i2 < 3; i2++)
                     {
-                        for (int i3 = 0; i3 < 5; i3++)
+                        for (int i3 = 0; i3 < 6; i3++)
                         {
-                            for (int i4 = 0; i4 < 5; i4++)
+                            for (int i4 = 0; i4 < 6; i4++)
                             {
-                                for (int i5 = 0; i5 < 5; i5++)
+                                for (int i5 = 0; i5 < 6; i5++)
                                 {
                                     genome[i1, i2, i3, i4, i5] = int.Parse(textgenome[globalCount++]);
                                 }
