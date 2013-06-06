@@ -3,7 +3,7 @@
 
 body   
 {
-    background: #b6b7bc;
+    background: rgb(211,255,253);
     font-size: .80em;
     font-family: "Helvetica Neue", "Lucida Grande", "Segoe UI", Arial, Helvetica, Verdana, sans-serif;
     margin: 0px;
@@ -13,7 +13,7 @@ body
 
 a:link, a:visited
 {
-    color: #034af3;
+    color: White;
 }
 
 a:hover
@@ -99,7 +99,7 @@ first child of the left and right table columns */
     position: relative;
     margin: 0px;
     padding: 0px;
-    background: #4b6c9e;
+    background: rgb(38,191,186);
     width: 100%;
 }
 
@@ -144,7 +144,7 @@ first child of the left and right table columns */
 
 div.hideSkiplink
 {
-    background-color:#3a4f63;
+    background-color:rgb(0,199,47);
     width:100%;
 }
 
@@ -161,10 +161,10 @@ div.menu ul
     width: auto;
 }
 
-div.menu ul li a, div.menu ul li a:visited
+div.menu ul li a, div.menu ul li a:visited, .butonka
 {
-    background-color: #465c71;
-    border: 1px #4e667d solid;
+    background-color: rgb(38,191,186);
+    border: 1px rgb(134,226,223) solid;
     color: #dde4ec;
     display: block;
     line-height: 1.35em;
@@ -321,4 +321,35 @@ div.accountInfo
 #MainContent_agent
 {
     left:-512px;
+}
+
+#genome
+{
+    margin: 20px;
+}
+
+table:tr
+{
+    padding:0;
+    margin:0;
+}
+
+.target,.line,.none
+{
+    font-family:Consolas;
+    font-size:18px;
+    padding:0;
+    margin:0;
+}
+
+.line,.target
+{
+    color:White;
+    background-color:rgb(224,113,165);
+}
+
+
+#rightInfoDiv
+{
+    font-size:20px;
 }

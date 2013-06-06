@@ -95,6 +95,7 @@ namespace SuprEmo
             int tile1 = 0;
             int tile2 = 0;
 
+
             //probailiy that the agent will try an action even though it knows there is a better action
             public double curiosity;
 
@@ -246,12 +247,21 @@ namespace SuprEmo
                 return randomNumberGenerator.Next(0, 2);
             }
 
+
+            int withAction;
+            int oldState;
+            int oldtile0;
+            int oldtile1;
+            int oldtile2;
+
+
             public void takeAction(int action, int state, int tile0, int tile1, int tile2)
             {
-                int oldState = this.state;
-                int oldtile0 = this.tile0;
-                int oldtile1 = this.tile1;
-                int oldtile2 = this.tile2;
+                oldState = this.state;
+                oldtile0 = this.tile0;
+                oldtile1 = this.tile1;
+                oldtile2 = this.tile2;
+                withAction = action;
 
                 this.state = state;
                 this.tile0 = tile0;
@@ -266,7 +276,7 @@ namespace SuprEmo
                         genome[action, oldState, oldtile0, oldtile1, oldtile2]++;
                     }
                 }
-                else
+                else if (thisStateEmotion < 0)
                 {
                     if (randomNumberGenerator.Next(0, 101) >= (1 - this.sensitivity) * 99)
                     {
@@ -347,5 +357,30 @@ namespace SuprEmo
                     return false;
             }
 
+
+
+            public int getTile0()
+            {
+                return tile0;
+            }
+
+            public int getTile1()
+            {
+                return tile1;
+            }
+
+            public int getTile2()
+            {
+                return tile2;
+            }
+
+            public int[] getLastChangedEmotionLocation(){
+                return new int[] { withAction, oldState, oldtile0, oldtile1, oldtile2};
+            }
+
+            public int getGenome(int wAction, int State, int tile0, int tile1, int tile2)
+            {
+                return genome[wAction, State, tile0, tile1, tile2];
+            }
         }
 }

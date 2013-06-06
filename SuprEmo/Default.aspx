@@ -17,17 +17,55 @@
          <asp:Image class="img" ID="agent" runat="server" />
          
         <div id="rightInfoDiv">
-            Coins Collected
+            Coins:
             <asp:Label ID="coins" runat="server" Text="0"></asp:Label>
             </br>
-            Lives Lived
+            Lives:
             <asp:Label ID="lives" runat="server" Text="0"></asp:Label>
             </br>
-            TilesPassed
+            Passed:
             <asp:Label ID="tiles" runat="server" Text="0"></asp:Label>
             </br>
-            <asp:Button ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
+            T0:
+            <asp:Label ID="tile0" runat="server" Text="0"></asp:Label>
+            </br>
+            T1:
+            <asp:Label ID="tile1" runat="server" Text="0"></asp:Label>
+            </br>
+            T2:
+            <asp:Label ID="tile2" runat="server" Text="0"></asp:Label>
+            </br>
+            State:
+            <asp:Label ID="state" runat="server" Text="0"></asp:Label>
+            </br>
+            Next Action:
+            <asp:Label ID="nextAction" runat="server" Text="0"></asp:Label>
+            </br>
+            </br>
+            <asp:Button class= "butonka" ID="Reset" runat="server" Text="Reset" onclick="resetButtonClick" />
+       </div>
+        </div>
+        <div id="genome">
+        <table width=100%>
+            <tr>
+                <td width=307>
+ 
+                         <asp:Image ID="Matrix5D" runat="server" Height=220px />
+    
+                </td>
+                <td width=307>
 
-        </div>
-        </div>
+                    <asp:Image ID="Matrix3D" runat="server" Height=298px />
+
+                </td>
+                <td width=307>
+  
+                    <asp:PlaceHolder ID="Matrix2D" runat="server"></asp:PlaceHolder>
+                </td>
+            </tr>
+        </table>
+
+
+
+    </div>
 </asp:Content>

@@ -17,7 +17,11 @@ namespace SuprEmo
             if (nevena == null)
             {
                 nevena = new SuprEmo.Agent();
-                environment = new SuprEmo.AgentEnvironment();
+                //for better testing
+
+                environment = new AgentEnvironment();
+                
+                //environment = new SuprEmo.AgentEnvironment();
             }
             else
             {
@@ -56,7 +60,40 @@ namespace SuprEmo
             coins.Text = nevena.gold + "";
             lives.Text = nevena.lives + "";
             tiles.Text = nevena.tilesPassed + "";
+            tile0.Text = nevena.getTile0()+"";
+            tile1.Text = nevena.getTile1() + "";
+            tile2.Text = nevena.getTile2() + "";
+            state.Text = nevena.getState() + "";
+            nextAction.Text = nevena.getAction() + "";
+            int [] last = nevena.getLastChangedEmotionLocation();
+            Matrix5D.ImageUrl = "Images/5D Matrix " + (last[0] + 1) + " " + (last[1] + 1) + ".png";
 
+            Matrix3D.ImageUrl = "Images/3D Matrix "+(last[2]+1)+".png";
+            string matrix = "<table>";
+            for (int i = 0; i < 6; i++)
+            {
+                matrix += "<tr height=35>";
+                for (int j = 0; j < 6; j++)
+                {
+                    if (last[3] == i && last[4] == j)
+                    {
+                        matrix += "<td width=35 class='target'><center>" + nevena.getGenome(last[0], last[1], last[2], i, j) + "</center></td>";
+                    }
+                    else if (last[3] == i || last[4] == j)
+                    {
+                        matrix += "<td width=35 class='line'><center>" + nevena.getGenome(last[0], last[1], last[2], i, j) + "</center></td>";
+                    }
+                    else
+                    {
+                        matrix += "<td width=35 class='none'><center>" + nevena.getGenome(last[0], last[1], last[2], i, j) + "</center></td>";
+                    }
+                }
+                matrix += "</tr>";
+            }
+
+
+            matrix += "</table>";
+            Matrix2D.Controls.Add(new LiteralControl(matrix));
             Session["agent"] = nevena;
             Session["env"] = environment;
         }

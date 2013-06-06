@@ -29,8 +29,8 @@ namespace SuprEmo
         }
         
         
-        LinkedList<int> states = new LinkedList<int>();
-        Random randomNumberGenerator = new Random();
+        protected LinkedList<int> states = new LinkedList<int>();
+        protected Random randomNumberGenerator = new Random();
         public int[] nextState(){
             int[] ret = new int[3];
             ret[0] = states.Last.Previous.Value;
