@@ -21,7 +21,7 @@
         the greater is the chance to get itself involved in an unexpected situation.
     </p>
     </div>
-    <div style="float:right; width:450px; height:420px">
+    <div style="float:right; width:450px; height:450px">
     <p style="text-align:justify">
         Agent's genome is a 5D space that consists of agent's three possible actions (jump, forward, slide), three possible positions 
         from which the action was performed (high, stand, low) and six possible states (walkable, walkable gold low, walkable gold high,
@@ -33,16 +33,12 @@
         in t1 and t2, which we defined above.
     </p>
     <p>
-        <img alt="" src="Images\cube.png" style="float:left" /> &nbsp
-        <img alt="" src="Images\cube2.png" style="float:left; margin-left:30px" /> &nbsp
-        <img alt="" src="Images\cube3.png" style="float:left; margin-left:30px" /> &nbsp
+        <asp:Image ID="Image6" runat="server" ImageUrl="Images/cube.png"  style="float:left"  /> &nbsp
+        <asp:Image ID="Image7" runat="server" ImageUrl="Images/cube2.png"  style="float:left; margin-left:30px" /> &nbsp
+        <asp:Image ID="Image8" runat="server" ImageUrl="Images/cube3.png"  style="float:left; margin-left:30px" /> &nbsp
     </p>
+    <p></p>
     </div>
-    <asp:Image ID="Image1" runat="server" />
-    <asp:Image ID="Image2" runat="server" />
-    <asp:Image ID="Image3" runat="server" />
-    <asp:Image ID="Image4" runat="server" />
-    <asp:Image ID="Image5" runat="server" />
-
+  
     
 </asp:Content>

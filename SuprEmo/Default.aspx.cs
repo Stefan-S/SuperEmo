@@ -28,9 +28,9 @@ namespace SuprEmo
             }
             else
             {
-                if ((string)Session["pass"] == "pass")
+                if (pass == 1)
                 {
-                    Session["pass"] = null;
+                    pass = 0;
                 }
                 else
                 {
@@ -154,34 +154,56 @@ namespace SuprEmo
         public void couriosityDec(Object sender, EventArgs e)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
-            Session["pass"] = "pass";
+            pass = 1;
             if (nevena.curiosity > 0)
             {
-                nevena.curiosity -= 0.1;
+                if (nevena.curiosity < 0.15)
+                    nevena.curiosity = 0;
+                else
+                {
+                    int curr = (int)(nevena.curiosity * 10);
+                    curr--;
+                    nevena.curiosity = (double)curr / 10.0;
+                }
+
             }
+
             Response.Redirect("~/default.aspx");
         }
 
-
+        public static int pass;
         public void couriosityInc(Object sender, EventArgs e)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
-            Session["pass"] = "pass";
+            pass = 1;
             if (nevena.curiosity < 1)
             {
-                nevena.curiosity += 0.1;
+                int curr = (int)nevena.curiosity * 10;
+                curr++;
+                nevena.curiosity += curr/10.0;
             }
+            if (nevena.curiosity > 1)
+                nevena.curiosity = 1;
             Response.Redirect("~/default.aspx");
         }
 
         public void sensitivityDec(Object sender, EventArgs e)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
-            Session["pass"] = "pass";
+            pass = 1;
             if (nevena.curiosity > 0)
             {
-                nevena.curiosity -= 0.1;
+                if (nevena.sensitivity < 0.15)
+                    nevena.sensitivity = 0;
+                else
+                {
+                    int curr = (int)(nevena.sensitivity * 10);
+                    curr--;
+                    nevena.sensitivity = (double)curr / 10.0;
+                }
+
             }
+
             Response.Redirect("~/default.aspx");
         }
 
@@ -189,11 +211,15 @@ namespace SuprEmo
         public void sensitivityInc(Object sender, EventArgs e)
         {
             SuprEmo.Agent nevena = (SuprEmo.Agent)Session["agent"];
-            Session["pass"] = "pass";
-            if (nevena.curiosity < 1)
+            pass = 1;
+            if (nevena.sensitivity < 1)
             {
-                nevena.curiosity += 0.1;
+                int curr = (int)nevena.sensitivity * 10;
+                curr++;
+                nevena.sensitivity += curr / 10.0;
             }
+            if (nevena.sensitivity > 1)
+                nevena.sensitivity = 1;
             Response.Redirect("~/default.aspx");
         }
 
