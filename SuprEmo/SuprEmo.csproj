@@ -91,6 +91,9 @@
     <Content Include="Images\agent_1_Stand_1.png" />
     <Content Include="Images\agent_2_Slide.png" />
     <Content Include="Images\basicTile.png" />
+    <Content Include="Images\cube.PNG" />
+    <Content Include="Images\cube2.PNG" />
+    <Content Include="Images\cube3.PNG" />
     <Content Include="Scripts\cookieHandilg.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
